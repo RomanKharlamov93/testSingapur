@@ -45,7 +45,7 @@
     padding: $base-padding*0.5;
     background-color: var(--color-button-black-bg);
     font-size: $base-font-size;
-    color: var(--color-white);
+    color: var(--color-text-link);
     text-align: center;
     text-decoration: none;
     overflow: hidden;
@@ -55,15 +55,15 @@
     }
 
     &:active {
-      background-color: var(--color-button-black-bg-active);
+      background-color: var(--color-button-menu-bg-active);
     }
 
     @include m(active) {
-      background-color: var(--color-button-menu-bg);
+      background-color: var(--color-button-option-bg-active);
 
       &:hover,
       &:focus {
-        background-color: var(--color-button-menu-bg);
+        background-color: var(--color-button-option-bg-active);
       }
     }
   }
