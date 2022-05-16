@@ -10,6 +10,11 @@ import {PhotoPageModule} from "./modules/photo-page/photo-page.module";
 import {SharedModule} from "./shared/shared.module";
 import {NavbarModule} from "./shared/components/navbar/navbar.module";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {HttpClientModule} from "@angular/common/http";
+import {NgxsModule} from "@ngxs/store";
+import {NgxsDispatchPluginModule} from "@ngxs-labs/dispatch-decorator";
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import {NgxsResetPluginModule} from "ngxs-reset-plugin";
 
 @NgModule({
   declarations: [
@@ -24,7 +29,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     PhotoPageModule,
     SharedModule,
     NavbarModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+  //  state-modules //
+    NgxsModule.forRoot(),
+    NgxsDispatchPluginModule.forRoot(),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    NgxsResetPluginModule.forRoot()
+  //  end state-modules
   ],
   providers: [],
   bootstrap: [AppComponent]

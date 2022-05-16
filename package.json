@@ -20,7 +20,11 @@
     "@angular/platform-browser-dynamic": "~12.1.0-",
     "@angular/router": "~12.1.0-",
     "@ng-bootstrap/ng-bootstrap": "^10.0.0",
+    "@ngxs-labs/dispatch-decorator": "^4.0.2",
+    "@ngxs/devtools-plugin": "^3.7.3",
+    "@ngxs/store": "^3.7.3",
     "bootstrap": "^5.2.0-beta1",
+    "ngxs-reset-plugin": "^2.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"

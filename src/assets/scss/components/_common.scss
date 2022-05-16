@@ -1,0 +1,5 @@
+@include b(container) {
+  max-width: 1400px;
+  padding: $base-padding * 0.5;
+  margin: 0 auto;
+}
