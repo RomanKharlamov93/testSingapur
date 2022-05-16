@@ -1,0 +1,77 @@
+
+@include b(shrink) {
+  flex: 0 0 auto;
+  overflow: visible;
+} // .shrink
+
+@include b(scroll-block) {
+  flex: 1 1 auto;
+  overflow: auto;
+  background-color: whitesmoke;
+
+  @include m(secondary) {
+    background-color: grey
+  }
+
+}
+
+@include b(visually-hidden) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+// 2-h. Horizontal Alignment
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@include b(align-right) {
+  justify-content: flex-end
+}
+@include b(align-center) {
+  justify-content: center;
+}
+@include b(align-justify) {
+  justify-content: space-between;
+}
+@include b(align-spaced) {
+  justify-content: space-around;
+}
+
+// 3-h. Vertical Alignment
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@include b(align-top) {
+  align-items: flex-start;
+}
+@include b(align-self-top) {
+  align-self: flex-start;
+}
+@include b(align-bottom) {
+  align-items: flex-end;
+}
+@include b(align-self-bottom) {
+  align-self: flex-end;
+}
+@include b(align-middle) {
+  align-items: center;
+}
+@include b(align-self-middle) {
+  align-self: center;
+}
+@include b(align-stretch) {
+  align-items: stretch;
+}
+@include b(align-self-stretch) {
+  align-self: stretch;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

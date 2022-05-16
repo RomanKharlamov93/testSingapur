@@ -1,0 +1,47 @@
+@include b(layout) {
+  height: 100%;
+
+  @include e(body) {
+    @include flex;
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+    @include flex-align(left, stretch);
+    flex: 1 1 auto;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+  }
+
+  @include e(row) {
+    @include flex;
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+    @include flex-align(left, stretch);
+    flex: 1 1 auto;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    position: relative;
+    order: 0;
+  }
+
+  @include e(block) {
+    @include flex;
+    @include flex-direction(column);
+    @include flex-wrap(nowrap);
+    @include flex-align(left, stretch);
+    flex: 1 1 auto;
+    overflow: hidden;
+    overflow-y: auto;
+    position: relative;
+  }
+
+  @include m(route) {
+    flex: 0 0 auto;
+    width: 26rem;
+  }
+}

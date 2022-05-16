@@ -1,0 +1,169 @@
+:root {
+  --color-white: #ffffff;
+  --color-white-accent: #ffffff;
+  --color-black: #17212b;
+
+  --color-text-base: #333333;
+  --color-text-primary: #0178b3;
+  --color-text-secondary: #757575;
+  --color-text-tertiary: #333333;
+  --color-text-success: #039000;
+  --color-text-warning: #a96618;
+  --color-text-danger: #a60014;
+  --color-text-link: #0178b3;
+  --color-text-link-light: #71c4f2;
+
+  // generated at isotropic.co/hex-color-to-css-filter
+  --color-filter-primary: invert(26%) sepia(94%) saturate(1713%) hue-rotate(178deg) brightness(96%) contrast(103%); // #0178b3
+  --color-filter-secondary: invert(47%) sepia(4%) saturate(17%) hue-rotate(7deg) brightness(96%) contrast(87%); // #757575
+  --color-filter-tertiary: invert(17%) sepia(72%) saturate(0%) hue-rotate(185deg) brightness(101%) contrast(99%); // #333333
+  --color-filter-warning: invert(35%) sepia(98%) saturate(446%) hue-rotate(353deg) brightness(100%) contrast(86%); // #a96618
+  --color-filter-success: invert(35%) sepia(99%) saturate(774%) hue-rotate(81deg) brightness(104%) contrast(109%);  // #039000
+
+  --color-bg-base: #ffffff;
+  --color-bg-secondary: #ffffff;
+  --color-bg-tertiary: #f2f2f2;
+  --color-bg-striped: #f8f8f8;
+  --color-bg-primary: #0178b3;
+  --color-bg-overlay: rgba(255, 255, 255, 0.75);
+
+  --color-button-bg: #eeeeee;
+  --color-button-bg-hover: #e4e4e4;
+  --color-button-bg-active: #dddddd;
+  --color-button-primary-bg: #0178b3;
+  --color-button-primary-bg-hover: #097db8;
+  --color-button-primary-bg-active: #0c75aa;
+  --color-button-alert-bg: #a60014;
+  --color-button-alert-bg-hover: #9c0214;
+  --color-button-alert-bg-active: #9b0214;
+  --color-button-accent-bg: #17212b;
+  --color-button-accent-bg-hover: #1b2632;
+  --color-button-accent-bg-active: #1e2b38;
+  --color-button-black-bg: #17212b;
+  --color-button-black-bg-hover: #1b2632;
+  --color-button-black-bg-active: #1e2b38;
+  --color-button-transparent-bg: transparent;
+  --color-button-transparent-bg-hover: #eeeeee;
+  --color-button-transparent-bg-active: #e6e6e6;
+  --color-button-option-bg: #ffffff;
+  --color-button-option-bg-hover: #eeeeee;
+  --color-button-option-bg-active: #e6e6e6;
+  --color-button-tab-bg: #0178b3;
+  --color-button-tab-bg-hover: #eeeeee;
+  --color-button-tab-bg-active: #eeeeee;
+  --color-button-menu-bg: #01679a;
+  --color-button-menu-bg-hover: #59a0c8;
+  --color-button-menu-bg-active: #59a0c8;
+
+  --color-border: #dddddd;
+  --color-border-primary: #dddddd;
+  --color-border-secondary: #cccccc;
+  --color-border-table: #dddddd;
+
+  --color-input-bg: #ffffff;
+  --color-input-bg-hover: #ffffff;
+  --color-input-bg-disabled: #eeeeee;
+  --color-input-bg-error: #f6e6e8;
+  --color-input-border: #cccccc;
+  --color-input-border-hover: #757575;
+  --color-input-placeholder: #aaaaaa;
+  --color-input-icon: #333333;
+  --color-search-bg: #eeeeee;
+  color-scheme: light;
+}
+
+@include b(theme-dark) {
+  --color-white-accent: #e4e4e4;
+
+  --color-text-base: #e4e4e4;
+  --color-text-primary: #59a0c8;
+  --color-text-secondary: #869cb0; // #8ea5bb
+  --color-text-tertiary: #b0beca; // #bdccd9
+  --color-text-success: #86d285;
+  --color-text-warning: #c8955b;
+  --color-text-danger: #fd6e6e;
+  --color-text-link: #59a0c8; // #6bc1f1
+  --color-text-link-light: #71c4f2; //-
+
+  --color-filter-primary: invert(76%) sepia(13%) saturate(4171%) hue-rotate(172deg) brightness(85%) contrast(82%); // #59a0c8
+  --color-filter-secondary: invert(75%) sepia(13%) saturate(624%) hue-rotate(167deg) brightness(82%) contrast(79%); // #869cb0
+  --color-filter-tertiary: invert(94%) sepia(2%) saturate(3554%) hue-rotate(178deg) brightness(82%) contrast(91%); // #b0beca
+  --color-filter-warning: invert(59%) sepia(63%) saturate(323%) hue-rotate(352deg) brightness(92%) contrast(89%); // #c8955b
+  --color-filter-success: invert(70%) sepia(53%) saturate(280%) hue-rotate(70deg) brightness(95%) contrast(98%);  // #86d285
+
+  --color-bg-base: #283a4c;
+  --color-bg-secondary: #1f2c39;
+  --color-bg-tertiary: #1f2c39;
+  --color-bg-striped: #1f2c39;
+  --color-bg-overlay: rgba(0, 0, 0, 0.5);
+
+  --color-typo-base: #e4e4e4;
+  --color-typo-primary: #bdccd9; // #B0BECA
+  --color-typo-secondary: #8ea5bb; // #869cb0;
+  --color-typo-success: #86d285;
+  --color-typo-danger: #fd6e6e;
+  --color-typo-link: #59a0c8; // #6bc1f1
+
+  --color-button-bg: #354b60;
+  --color-button-bg-hover: #3e5266;
+  --color-button-bg-active: #394e62;
+  --color-button-alert-bg: #fd6e6e;
+  --color-button-alert-bg-hover: #f36969;
+  --color-button-alert-bg-active: #ec6666;
+  --color-button-accent-bg: #0178b3;
+  --color-button-accent-bg-hover: #097db8;
+  --color-button-accent-bg-active: #0c75aa;
+  --color-button-transparent-bg-hover: #354b60;
+  --color-button-transparent-bg-active: #32465a;
+  --color-button-option-bg: #283a4c;
+  --color-button-option-bg-hover: #1f2c39;
+  --color-button-option-bg-active: #1d2b39;
+  --color-button-tab-bg: #0178b3;
+  --color-button-tab-bg-hover: #59a0c8;
+  --color-button-tab-bg-active: #59a0c8; //#354b60
+  --color-button-menu-bg: #354b60;
+  --color-button-menu-bg-hover: #354b60;
+  --color-button-menu-bg-active: #354b60; //#354b60
+
+  --color-border: transparent;
+  --color-border-primary: #354b60;
+  --color-border-secondary: #455f79;
+  --color-border-table: #17212b;
+
+  --color-input-bg: #354b60;
+  --color-input-bg-hover: #3e5266;
+  --color-input-bg-active: #394e62;
+  --color-input-bg-disabled: #344556;
+  --color-input-bg-error: #354b60;
+  --color-input-border: transparent;
+  --color-input-border-hover: transparent;
+  --color-input-placeholder: #b0beca;
+  --color-input-icon: #b0beca;
+  --color-search-bg: #354b60;
+  color-scheme: dark;
+}
+
+$white: #ffffff;
+$gray-100: #f8f8f8;
+$gray-200: #f2f2f2;
+$gray-300: #eeeeee;
+$gray-400: #dddddd;
+$gray-500: #cccccc;
+$gray-600: #808080;
+$gray-700: #666666;
+$gray-800: #535353;
+$gray-900: #333333;
+$black: #17212b;
+
+$base-font-color: $gray-900;
+$base-font-size: 1rem;
+$base-font-family: Arial, sans-serif;
+$font-weight-normal: normal;
+$font-weight-bold: 600;
+
+$base-margin: 1rem;
+$base-padding: 1rem;
+
+$base-border: 1px solid $gray-400;
+$base-radius: 3px;
+$base-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.25);
