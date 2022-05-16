@@ -1,1 +1,44 @@
-<p>post-page works!</p>
+<div class="layout__block">
+  <ng-container *ngIf="(posts$ | async) as posts">
+    <div class="scroll-block">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">User</th>
+          <th scope="col">Title</th>
+          <th scope="col">Body</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let post of (posts$ | async) | slice: (page-1) * pageSize : page * pageSize">
+          <td>
+            <a class="link-primary">{{ post?.id }}</a>
+          </td>
+          <td>
+            <a class="link-primary">{{ post?.userId }}</a>
+          </td>
+          <td>
+            <a class="link-primary"> {{ post?.title }}</a>
+          </td>
+          <td>
+            {{ post?.body }}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="layout__block shrink">
+      <div class="d-flex justify-content-between p-2">
+        <ngb-pagination [collectionSize]="posts.length" [(page)]="page" [pageSize]="pageSize"></ngb-pagination>
+
+        <select class="form-select" style="width: auto" [(ngModel)]="pageSize" title="kek">
+          <option [ngValue]="50">50 items per page</option>
+          <option [ngValue]="100">100 items per page</option>
+          <option [ngValue]="200">200 items per page</option>
+        </select>
+      </div>
+    </div>
+  </ng-container>
+</div>

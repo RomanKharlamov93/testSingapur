@@ -24,6 +24,7 @@
     "@ngxs/devtools-plugin": "^3.7.3",
     "@ngxs/store": "^3.7.3",
     "bootstrap": "^5.2.0-beta1",
+    "mdb-angular-ui-kit": "^2.2.0",
     "ngxs-reset-plugin": "^1.4.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",

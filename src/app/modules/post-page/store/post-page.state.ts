@@ -5,6 +5,9 @@ import {Post} from "../post-page";
 import {GetPosts} from "./post-page.action";
 import {Observable} from "rxjs";
 import {PostPageService} from "../services/post-page.service";
+import {tap} from "rxjs/operators";
+import {HttpResponse} from "@angular/common/http";
+import {patch} from "@ngxs/store/operators";
 
 
 @State<PostPageStateModel>({
@@ -20,12 +23,20 @@ export class PostPageState {
   }
 
   @Selector()
-  static getPosts(state: PostPageStateModel): Post[] {
+  static getPosts(state: PostPageStateModel): Post[] | null {
     return state.posts;
   }
 
   @Action(GetPosts)
-  getPosts(ctx: StateContext<PostPageStateModel>): Observable<Post> {
-    return this._postPageService.getPosts()
+  getPosts(ctx: StateContext<PostPageStateModel>, { params }: GetPosts): Observable<HttpResponse<Post[]>> {
+    return this._postPageService.getPosts().pipe(tap(
+      (response: HttpResponse<Post[]>) => {
+        ctx.setState(
+          patch<PostPageStateModel>({
+            posts: response.body
+          })
+        )
+      }
+    ))
   }
 }
