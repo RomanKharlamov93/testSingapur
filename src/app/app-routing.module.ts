@@ -10,23 +10,23 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule)
+    loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule),
+    data: {title: 'Dashboard'}
   },
   {
     path: 'albums',
-    loadChildren: () => import('./modules/album-page/album-page.module').then(m => m.AlbumPageModule)
+    loadChildren: () => import('./modules/album-page/album-page.module').then(m => m.AlbumPageModule),
+    data: {title: 'Albums'}
   },
   {
     path: 'photos',
-    loadChildren: () => import('./modules/photo-page/photo-page.module').then(m => m.PhotoPageModule)
+    loadChildren: () => import('./modules/photo-page/photo-page.module').then(m => m.PhotoPageModule),
+    data: {title: 'Photos'}
   },
   {
     path: 'posts',
-    loadChildren: () => import('./modules/post-page/post-page.module').then(m => m.PostPageModule)
-  },
-  {
-    path: '**',
-    redirectTo: '/'
+    loadChildren: () => import('./modules/post-page/post-page.module').then(m => m.PostPageModule),
+    data: {title: 'Posts'}
   },
   {
     path: '', component: NavbarComponent, outlet: 'navbar'

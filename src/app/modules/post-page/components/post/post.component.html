@@ -1,0 +1,12 @@
+<div>
+  <button class="button" (click)="goBack()">Назад</button>
+</div>
+
+<div class="post" *ngIf="(post$ | async) as post">
+  <h3 class="post__title">
+      {{ post.title }}
+  </h3>
+  <div class="post__content">
+      {{ post.body }}
+  </div>
+</div>

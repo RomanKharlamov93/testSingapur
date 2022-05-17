@@ -2,7 +2,7 @@ import {PostPageStateModel} from "./post-page.state-model";
 import {Action, Selector, State, StateContext} from "@ngxs/store";
 import {Injectable} from "@angular/core";
 import {Post} from "../post-page";
-import {GetPosts} from "./post-page.action";
+import {GetPostById, GetPosts} from "./post-page.action";
 import {Observable} from "rxjs";
 import {PostPageService} from "../services/post-page.service";
 import {tap} from "rxjs/operators";
@@ -27,6 +27,11 @@ export class PostPageState {
     return state.posts;
   }
 
+  @Selector()
+  static getPostById(state: PostPageStateModel): Post | null {
+    return state.post;
+  }
+
   @Action(GetPosts)
   getPosts(ctx: StateContext<PostPageStateModel>, { params }: GetPosts): Observable<HttpResponse<Post[]>> {
     return this._postPageService.getPosts().pipe(tap(
@@ -38,5 +43,18 @@ export class PostPageState {
         )
       }
     ))
+  }
+
+  @Action(GetPostById)
+  getPostById(ctx: StateContext<PostPageStateModel>, { postId }: GetPostById): Observable<Post> | undefined{
+    return this._postPageService.getPostById(postId).pipe(tap(
+      (response: Post) => {
+        ctx.setState(
+          patch<PostPageStateModel>({
+            post: response
+          })
+        )
+      }
+    ));
   }
 }

@@ -1,0 +1,30 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">User</th>
+    <th scope="col">Title</th>
+    <th scope="col">Body</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let post of posts | slice: (page-1) * pageSize : page * pageSize">
+    <td>
+      <a class="link-primary" (click)="handleRequest(post.id)">
+        {{ post?.id }}
+      </a>
+    </td>
+    <td>
+      <a class="link-primary" (click)="handleRequest(post.userId)">
+        {{ post?.userId }}
+      </a>
+    </td>
+    <td>
+      <a class="link-primary"> {{ post?.title }}</a>
+    </td>
+    <td>
+      {{ post?.body }}
+    </td>
+  </tr>
+  </tbody>
+</table>

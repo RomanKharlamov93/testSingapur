@@ -7,10 +7,15 @@ import {NgxsModule} from "@ngxs/store";
 import {PostPageState} from "./store/post-page.state";
 import {NgbPaginationModule} from "@ng-bootstrap/ng-bootstrap";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { PostsTableComponent } from './components/posts-table/posts-table.component';
+import { PostComponent } from './components/post/post.component';
+import {SharedModule} from "../../shared/shared.module";
 
 @NgModule({
   declarations: [
-    PostPageComponent
+    PostPageComponent,
+    PostsTableComponent,
+    PostComponent
   ],
   providers: [PostPageService],
   imports: [
@@ -22,7 +27,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     ]),
     NgbPaginationModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ]
 })
 

@@ -11,4 +11,8 @@ export class PostPageService {
   public getPosts(params?: any): Observable<HttpResponse<Post[]>> {
     return this._http.get<Post[]>('posts', { params, observe: 'response' });
   }
+
+  public getPostById(postId: number): Observable<Post> {
+    return this._http.get<Post>(`posts/${postId}`)
+  }
 }

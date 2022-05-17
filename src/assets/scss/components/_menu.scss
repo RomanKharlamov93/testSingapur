@@ -18,6 +18,7 @@
   background-color: var(--color-black);
   scrollbar-width: thin;
   min-width: 10rem;
+  cursor: pointer;
 
   @include e(layout) {
     @include flex;
