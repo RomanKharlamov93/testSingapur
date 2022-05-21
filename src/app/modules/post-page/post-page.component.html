@@ -19,6 +19,7 @@
         <div class="d-flex justify-content-between p-2">
           <ngb-pagination [collectionSize]="(posts$ | async)?.length!" [(page)]="page" [pageSize]="pageSize"></ngb-pagination>
           <select class="form-select" style="width: auto" [(ngModel)]="pageSize" title="kek">
+            <option [ngValue]="5">5 items per page</option>
             <option [ngValue]="10">10 items per page</option>
             <option [ngValue]="20">20 items per page</option>
             <option [ngValue]="30">30 items per page</option>

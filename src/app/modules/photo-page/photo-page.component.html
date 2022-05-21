@@ -1,0 +1,11 @@
+<div class="photo-page">
+  <div class="container">
+    <div class="photo-page__content">
+      <div class="d-flex justify-content-start">
+        <cdk-virtual-scroll-viewport appendOnly itemSize="50" class="example-viewport">
+          <div *cdkVirtualFor="let item of items" class="example-item">{{item}}</div>
+        </cdk-virtual-scroll-viewport>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="container">
+  <p>album-page works!</p>
+  <div class="d-flex justify-content-start flex-wrap">
+    <app-album-item
+      [album]="album" *ngFor="let album of (albums$ | async)!"
+      (click)="openAlbum(album.albumId)">
+    </app-album-item>
+  </div>
+
+</div>

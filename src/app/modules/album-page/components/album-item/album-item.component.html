@@ -1,0 +1,11 @@
+<div class="album-item">
+  <div class="album-item__title">
+     <span class="album-item__title-text"> {{ album?.title }}</span>
+  </div>
+  <div class="album-item__content d-flex justify-content-around">
+    <img [src]="album.thumbnailUrl" alt="">
+  </div>
+  <div class="album-item__footer">
+    By User id:  {{ album?.albumId }}
+  </div>
+</div>
