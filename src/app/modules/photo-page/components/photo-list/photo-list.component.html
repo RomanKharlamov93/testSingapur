@@ -1,0 +1,14 @@
+<cdk-virtual-scroll-viewport itemSize="20">
+  <div class="photo-list">
+    <div class="photo-list__item" *cdkVirtualFor="let item of photosList">
+      <div class="photo-item">
+        <div class="photo-item__img-box">
+          <img [src]="item.thumbnailUrl" [alt]="item.title" class="photo-item__img">
+        </div>
+        <div class="photo-item__title-box">
+          <h4 class="photo-item__title">{{ item.title }}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</cdk-virtual-scroll-viewport>

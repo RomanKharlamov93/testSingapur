@@ -16,6 +16,8 @@ import {NgxsDispatchPluginModule} from "@ngxs-labs/dispatch-decorator";
 import {NgxsReduxDevtoolsPluginModule} from '@ngxs/devtools-plugin';
 import {NgxsResetPluginModule} from "ngxs-reset-plugin";
 import {CoreModule} from "./core/core.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -33,12 +35,12 @@ import {CoreModule} from "./core/core.module";
     NgbModule,
     HttpClientModule,
     CoreModule,
-    //  state-modules //
     NgxsModule.forRoot(),
     NgxsDispatchPluginModule.forRoot(),
     NgxsReduxDevtoolsPluginModule.forRoot(),
-    NgxsResetPluginModule.forRoot()
-    //  end state-modules
+    NgxsResetPluginModule.forRoot(),
+    BrowserAnimationsModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

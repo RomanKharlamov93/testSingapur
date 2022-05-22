@@ -34,12 +34,11 @@ export class AlbumPageState {
 
   @Action(GetAlbums)
   getAlbums(ctx: StateContext<AlbumPageStateModel>): Observable<HttpResponse<AlbumItem[]>> {
-    return this._albumsPageService.getAlbums({ _limit: 10 }).pipe(
+    return this._albumsPageService.getAlbums().pipe(
       tap((response: HttpResponse<AlbumItem[]>) => {
           ctx.setState(patch<AlbumPageStateModel>({
             albums: response.body
           }));
-          console.log(ctx.getState().albums)
         }
       )
     )

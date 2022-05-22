@@ -1,11 +1,10 @@
 <div class="photo-page">
-  <div class="container">
-    <div class="photo-page__content">
-      <div class="d-flex justify-content-start">
-        <cdk-virtual-scroll-viewport appendOnly itemSize="50" class="example-viewport">
-          <div *cdkVirtualFor="let item of items" class="example-item">{{item}}</div>
-        </cdk-virtual-scroll-viewport>
-      </div>
-    </div>
+  <div class="photo-page__title-box">
+    <h2 class="photo-page__title">
+      Photos
+    </h2>
+  </div>
+  <div class="photo-page__content">
+    <app-photo-list [photosList]="(photos$ | async)!"></app-photo-list>
   </div>
 </div>
