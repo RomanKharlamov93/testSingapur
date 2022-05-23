@@ -1,0 +1,17 @@
+@include b(post) {
+  display: flex;
+  flex-direction: column;
+  @include e(item) {
+    margin-bottom: 25px;
+    border-bottom: 2px solid #ebebeb;
+    padding: 10px;
+  }
+}
+
+@include b(post-page) {
+  display: flex;
+  flex-direction: column;
+  @include e(input-box) {
+    margin: 15px 0;
+  }
+}

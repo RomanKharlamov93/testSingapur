@@ -1,0 +1,99 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Dropdown
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@include b(dropdown) {
+  position: relative;
+
+  @include e(pane) {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 3;
+
+    width: inherit;
+    max-height: 16.5rem;
+    padding: $base-padding*0.25 0;
+    box-sizing: border-box;
+    background-color: var(--color-bg-base);
+    border-radius: $base-radius;
+    box-shadow: 0px 0.375rem 1rem rgba(0, 0, 0, 0.25);
+    overflow: auto;
+    transition: transform 86ms ease,
+    visibility 0.125s ease,
+    opacity 0.125s ease;
+
+    transform: translateY(3px);
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  @include e(arrow-icon) {
+    padding-left: $base-padding*0.75;
+    font-size: $base-font-size;
+  }
+
+  @include e(block) {
+    @include flex;
+    @include flex-direction(column);
+    padding: $base-padding $base-padding*0.875;
+    border-bottom: 0.0625rem solid var(--color-border-primary);
+
+    @include m(small) {
+      padding: $base-padding*0.5;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  @include m(width) {
+    @include e(pane) {
+      min-width: 100%;
+      right: 0;
+      left: 0;
+    }
+  }
+
+  @include m(pane-right) {
+    @include e(pane) {
+      left: 0;
+      right: auto;
+    }
+  }
+
+  @include m(pane-left) {
+    @include e(pane) {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  @include m(pane-top) {
+    @include e(pane) {
+      top: auto;
+      bottom: 100%;
+    }
+  }
+
+  @include m(xxl) {
+    width: 28.5rem;
+  }
+
+  @include m(xl) {
+    width: 22.5rem;
+  }
+
+  @include m(md) {
+    width: 16.5rem;
+  }
+
+  @include m(active) {
+    @include e(pane) {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

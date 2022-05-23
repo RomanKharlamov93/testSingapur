@@ -13,4 +13,7 @@ export class NavbarComponent implements OnInit {
     console.log('kek')
   }
 
+  public showAllert(pageName: string):void {
+    alert(pageName + ' is in progress');
+  }
 }

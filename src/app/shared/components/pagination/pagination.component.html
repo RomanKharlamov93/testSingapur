@@ -1,0 +1,69 @@
+<div class="pagination">
+  <div class="pagination__layout">
+    <span class="pagination__total-records">Total: {{ totalSize }}</span>
+  </div>
+  <div class="pagination__layout shrink">
+    <div class="pagination-control">
+      <div class="pagination-control__layout">
+        <div class="dropdown dropdown--width dropdown--pane-top" [class.dropdown--active]="dropdownState">
+          <button class="dropdown__button button button--transparent" (click)="dropdownState = !dropdownState" type="button">
+            <span class="button__title">Show: {{ pageCounter }}</span>
+            <span class="dropdown__arrow-icon icon">
+                Click
+            </span>
+          </button>
+          <div class="dropdown__pane">
+            <ul class="option">
+              <li class="option__layout" *ngFor="let size of sizeOptions">
+                <button class="option__button button" type="button" (click)="setCountPerPage(size)">
+                  <span class="button__title">{{ size }}</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="pagination-control__layout">
+        <button class="button button--transparent" type="button" (click)="setPage(1)" [disabled]="pageCounter === 1">
+            <span class="button__icon icon">
+                <<
+            </span>
+        </button>
+      </div>
+      <div class="pagination-control__layout">
+        <button class="button button--transparent" type="button"
+          (click)="setPage(pageCounter - 1)" [disabled]="pageCounter === 1">
+            <span class="button__icon icon">
+              <
+            </span>
+        </button>
+      </div>
+      <div class="pagination-control__layout">
+        <input type="number" inputmode="numeric"
+               class="pagination-control__input input"
+               [value]="pageInfo.number + 1"
+               (keydown.enter)="setPageFromKey($event)">
+      </div>
+      <div class="pagination-control__layout">
+                <span class="pagination-control__counter">
+                   / {{ pageInfo?.totalPages }}
+    </span>
+      </div>
+      <div class="pagination-control__layout">
+        <button class="button button--transparent" type="button" (click)="setPage(pageCounter + 1)" [disabled]="pageCounter === 10">
+          <span class="button__icon icon">
+              >
+          </span>
+        </button>
+      </div>
+      <div class="pagination-control__layout">
+        <button class="button button--transparent" type="button"
+          (click)="setPage(10)" [disabled]="pageCounter === 10">
+          <span class="button__icon icon">
+              >>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

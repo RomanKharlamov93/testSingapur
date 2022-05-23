@@ -1,31 +1,23 @@
-<div class="post-page">
+<div class="layout__block">
   <div class="container">
-    <div class="post-page__title">
-      <h2>Posts</h2>
-    </div>
-    <!--    search and filter -->
-
-    <div class="post-page__content">
+    <div class="post-page">
+      <div class="post-page__title-box">
+        <h1 class="post-page__title">
+          Posts
+        </h1>
+      </div>
+      <div class="post-page__input-box">
+        <app-search-bar [value]="(postsSearchValue$ | async)!" (searched)="onSearch($event)"></app-search-bar>
+      </div>
       <div class="scroll-block">
         <app-posts-table
           [posts]="(posts$ | async)!"
-          [page]="page"
-          [pageSize]="pageSize"
           (postId)="handleRequest($event)">
         </app-posts-table>
       </div>
-
-      <div class="layout__block shrink">
-        <div class="d-flex justify-content-between p-2">
-          <ngb-pagination [collectionSize]="(posts$ | async)?.length!" [(page)]="page" [pageSize]="pageSize"></ngb-pagination>
-          <select class="form-select" style="width: auto" [(ngModel)]="pageSize" title="kek">
-            <option [ngValue]="5">5 items per page</option>
-            <option [ngValue]="10">10 items per page</option>
-            <option [ngValue]="20">20 items per page</option>
-            <option [ngValue]="30">30 items per page</option>
-          </select>
-        </div>
-      </div>
     </div>
   </div>
+</div>
+<div class="layout__block shrink">
+  <app-pagination [info]="(pageInfo$ | async)!" [totalSize]="(posts$ | async)?.length!" (changePageDispatch)="handleParams($event)"></app-pagination>
 </div>

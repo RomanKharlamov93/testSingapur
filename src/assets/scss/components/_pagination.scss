@@ -1,0 +1,85 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Pagination
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// 1. Pagination
+// 2. Pagination Control
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// 1. Pagination
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@include b(pagination) {
+  @include flex;
+  @include flex-direction(row);
+  @include flex-wrap(nowrap);
+  @include flex-align(left, middle);
+  flex: 0 0 auto;
+  height: auto;
+  box-sizing: border-box;
+  padding: $base-padding*0.5 $base-padding;
+  background-color: var(--color-bg-secondary);
+  box-shadow: 0 -0.0625rem 0 0 var(--color-border);
+  font-size: $base-font-size*0.875;
+  color: var(--color-text-tertiary);
+  z-index: 3;
+
+  @include e(layout) {
+    @include flex;
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+    flex: 1 1 auto;
+    box-sizing: border-box;
+    padding-right: $base-padding*0.25;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  @include e(total-records) {
+    font-size: $base-font-size*0.8125;
+  }
+}//.pagination
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// 2. Pagination Control
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@include b(pagination-control) {
+  @include flex;
+  @include flex-direction(row);
+  @include flex-wrap(nowrap);
+  @include flex-align(left, middle);
+  flex: 0 0 auto;
+  height: auto;
+  box-sizing: border-box;
+  font-size: $base-font-size;
+  color: var(--color-text-tertiary);
+
+  @include e(layout) {
+    @include flex;
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    padding-right: $base-padding*0.375;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  @include e(button) {
+    border-radius: 0;
+    font-size: $base-font-size;
+  }
+
+  @include e(input) {
+    text-align: right;
+    width: 3.5em;
+    padding: $base-padding*0.25;
+  }
+
+  @include e(counter) {
+    font-size: $base-font-size*0.875;
+  }
+}//.pagination-control
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

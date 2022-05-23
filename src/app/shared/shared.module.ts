@@ -3,19 +3,27 @@ import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.compo
 import {RouterModule} from "@angular/router";
 import {CommonModule} from "@angular/common";
 import { VirtualScrollerComponent } from './components/virtual-scroller/virtual-scroller.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     BreadcrumbsComponent,
-    VirtualScrollerComponent
+    VirtualScrollerComponent,
+    PaginationComponent,
+    SearchBarComponent
   ],
   providers: [],
   exports: [
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    PaginationComponent,
+    SearchBarComponent
   ],
   imports: [
     RouterModule,
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 

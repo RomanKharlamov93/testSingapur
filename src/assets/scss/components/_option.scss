@@ -1,0 +1,56 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Option
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@include b(option) {
+  @include flex;
+  @include flex-direction(column);
+  @include flex-wrap(nowrap);
+  @include flex-align(left, stretch);
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  font-style: normal;
+  list-style: none;
+  line-height: 1.25;
+  color: var(--color-text-base);
+
+  @include e(layout) {
+    @include flex;
+    @include flex-direction(column);
+    @include flex-wrap(nowrap);
+    @include flex-align(left, stretch);
+    flex: 1 1 auto;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  @include e(button) {
+    background-color: var(--color-button-option-bg);
+    border-radius: 0;
+    color: var(--color-text-tertiary);
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-button-option-bg-hover);
+    }
+
+    &:active {
+      background-color: var(--color-button-option-bg-active);
+    }
+
+    @include m(disabled) {
+      cursor: default;
+      opacity: 0.5;
+
+      &:hover,
+      &:focus {
+        background-color: initial;
+      }
+    }
+  }
+}//.option
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

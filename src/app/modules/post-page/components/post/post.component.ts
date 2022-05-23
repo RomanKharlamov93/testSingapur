@@ -9,11 +9,11 @@ import {FacadePostPageService} from "../../store/facade-post-page.service";
   templateUrl: './post.component.html'
 })
 export class PostComponent implements OnInit {
-  public post$!: Observable<Post>;
+  public currentPost$!: Observable<Post>;
 
   constructor(private _facadePostsPageService: FacadePostPageService,
               private _location: Location) {
-    this.post$ = this._facadePostsPageService.post$;
+    this.currentPost$ = this._facadePostsPageService.currentPost$;
   }
 
   ngOnInit(): void {

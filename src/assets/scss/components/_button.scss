@@ -1,0 +1,176 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Button
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@include b(button) {
+  display: inline-flex;
+  @include flex-direction(row);
+  @include flex-wrap(nowrap);
+  @include flex-align(left, middle);
+  flex: 0 0 auto;
+  max-width: 100%;
+  min-height: 2.25rem;
+  box-sizing: border-box;
+  padding: $base-padding*0.5 $base-padding*0.625;
+  background-color: var(--color-button-bg);
+  border: none;
+  border-radius: $base-radius;
+  font-family: inherit;
+  font-size: $base-font-size*0.875;
+  line-height: 1.2;
+  color: var(--color-text-base);
+  fill: currentColor;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-button-bg-hover);
+  }
+
+  &:active {
+    background-color: var(--color-button-bg-active);
+  }
+
+  &:disabled {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  @include m(no-click) {
+    cursor: default;
+    color: var(--color-text-base) !important;
+  }
+
+  @include e(icon) {
+    font-size: $base-font-size;
+  }
+
+  @include e(title) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+
+    &:not(:first-child) {
+      padding-left: $base-margin*0.5;
+    }
+  }
+
+  @include m(icon) {
+    padding-right: $base-padding*0.5;
+    padding-left: $base-padding*0.5;
+
+    @include e(icon) {
+      font-size: $base-font-size*1.25;
+    }
+  }
+
+  @include m(small) {
+    min-height: auto;
+    padding: $base-padding*0.5;
+  }
+
+  @include m(primary) {
+    background-color: var(--color-button-primary-bg);
+    color: var(--color-white);
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-button-primary-bg-hover);
+    }
+
+    &:active {
+      background-color: var(--color-button-primary-bg-active);
+    }
+  }
+
+  @include m(alert) {
+    background-color: var(--color-button-alert-bg);
+    color: var(--color-white);
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-button-alert-bg-hover);
+    }
+
+    &:active {
+      background-color: var(--color-button-alert-bg-active);
+    }
+  }
+
+  @include m(black) {
+    background-color: var(--color-button-black-bg);
+    color: var(--color-white);
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-button-black-bg-hover);
+    }
+
+    &:active {
+      background-color: var(--color-button-black-bg-active);
+    }
+  }
+
+  @include m(accent) {
+    background-color: var(--color-button-accent-bg);
+    color: var(--color-white);
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-button-accent-bg-hover);
+    }
+
+    &:active {
+      background-color: var(--color-button-accent-bg-active);
+    }
+  }
+
+  @include m(transparent) {
+    background-color: transparent;
+    color: var(--color-text-tertiary);
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-button-transparent-bg-hover);
+    }
+
+    &:active {
+      background-color: var(--color-button-transparent-bg-active);
+    }
+
+    &:disabled {
+      background-color: unset;
+    }
+  }
+
+  @include m(link) {
+    min-height: auto;
+    padding: 0;
+    background-color: unset;
+    font-size: inherit;
+    color: var(--color-text-link);
+
+    &:hover,
+    &:focus {
+      background-color: unset;
+    }
+  }
+
+  @include m(link-line) {
+    @extend .button--link;
+    text-decoration: underline;
+  }
+
+  @include m(wide) {
+    padding: $base-padding*0.5 $base-padding;
+  }
+
+  @include m(expand) {
+    @include flex-align(center, middle);
+    width: 100%;
+  }
+}//.button
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -

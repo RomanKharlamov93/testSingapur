@@ -7,6 +7,8 @@
 @include b(post-page) {
 
   @include e(title) {
+    font-size: 42px;
+    font-weight: bold;
     margin-bottom: 5rem;
   }
 
@@ -111,6 +113,10 @@ ol.breadcrumb li a:hover {
 
 .example-item {
   height: 50px;
+}
+
+.table {
+  margin: 0;
 }
 
 cdk-virtual-scroll-viewport {

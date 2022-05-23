@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: 'posts/:id', component: PostComponent, data: {title: ':id'} },
   {
     path: '**',
-    redirectTo: 'dashboard'
+    redirectTo: 'posts'
   },
 ];
 

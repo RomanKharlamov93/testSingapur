@@ -3,7 +3,7 @@ export class GetPosts {
   constructor(public params?: any) {}
 }
 
-export class GetPostById {
+export class GetCurrentPostById {
   static readonly type = '[PostPage] Get Post By Id';
   constructor(public postId: number) {}
 }

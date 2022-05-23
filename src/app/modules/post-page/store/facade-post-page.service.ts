@@ -4,7 +4,9 @@ import {PostPageState} from "./post-page.state";
 import {Observable} from "rxjs";
 import {Post} from "../post-page";
 import {Dispatch} from "@ngxs-labs/dispatch-decorator";
-import {GetPostById, GetPosts} from "./post-page.action";
+import {GetCurrentPostById, GetPosts} from "./post-page.action";
+import {PageInfo} from "../../../shared/components/pagination/pagination";
+import {RequestQueryParams} from "../../../core/common";
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +14,13 @@ import {GetPostById, GetPosts} from "./post-page.action";
 
 export class FacadePostPageService {
   @Select(PostPageState.getPosts) posts$!: Observable<Post[]>;
-  @Select(PostPageState.getPostById) post$!: Observable<Post>;
+  @Select(PostPageState.getCurrentPostById) currentPost$!: Observable<Post>;
+  @Select(PostPageState.getPostPageInfo) pageInfo$!: Observable<PageInfo>;
+  @Select(PostPageState.getPostsPageSearchValue) postsSearchValue$!: Observable<string>;
 
   @Dispatch()
-  getPosts = (params?: any) => new GetPosts(params)
+  getPosts = (params?: RequestQueryParams) => new GetPosts(params)
 
   @Dispatch()
-  getPostById = (postId: number) => new GetPostById(postId)
+  getCurrentPostById = (postId: number) => new GetCurrentPostById(postId)
 }

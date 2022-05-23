@@ -4,13 +4,13 @@
     </h2>
     <ul class="menu__layout">
       <li class="menu__item">
-        <a [routerLink]="['/dashboard']" class="menu__link" routerLinkActive="menu__link--active">
+        <a class="menu__link" routerLinkActive="menu__link--active" (click)="showAllert('Dashboard')">
           <span class="menu__title ">Dashboard</span>
         </a>
         <a [routerLink]="['/posts']" class="menu__link" routerLinkActive="menu__link--active">
           <span class="menu__title">Posts</span>
         </a>
-        <a [routerLink]="['/albums']" class="menu__link" routerLinkActive="menu__link--active">
+        <a class="menu__link" routerLinkActive="menu__link--active" (click)="showAllert('Albums')">
           <span class="menu__title">Albums</span>
         </a>
         <a [routerLink]="['/photos']" class="menu__link" routerLinkActive="menu__link--active">

@@ -5,19 +5,19 @@ import { NavbarComponent } from "./shared/components/navbar/navbar.component";
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'posts',
     pathMatch: 'full'
   },
-  {
-    path: 'dashboard',
-    loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule),
-    data: {title: 'Dashboard'}
-  },
-  {
-    path: 'albums',
-    loadChildren: () => import('./modules/album-page/album-page.module').then(m => m.AlbumPageModule),
-    data: {title: 'Albums'}
-  },
+  // {
+  //   path: 'dashboard',
+  //   loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule),
+  //   data: {title: 'Dashboard'}
+  // },
+  // {
+  //   path: 'albums',
+  //   loadChildren: () => import('./modules/album-page/album-page.module').then(m => m.AlbumPageModule),
+  //   data: {title: 'Albums'}
+  // },
   {
     path: 'photos',
     loadChildren: () => import('./modules/photo-page/photo-page.module').then(m => m.PhotoPageModule),

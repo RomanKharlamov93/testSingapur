@@ -1,0 +1,8 @@
+<div class="search" role="search">
+  <input
+      #searchInput
+      placeholder="Search for..."
+      [(ngModel)]="value"
+      (ngModelChange)="onChange()"
+      class="search__input input" type="search" inputmode="search" aria-label="Search">
+</div>
