@@ -25,3 +25,6 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+#Some manifest about task 
+I create structure, separated modules, make them lazy-loaded, showed how i can work with templates and e.t.c stuff, added state by ngXs, make some api work with that (shitty) "backend", made pagination, made some desktop-markdown. Shows using some variants of working with scss, includes BEM methodology. base work with routes and interceptor. But i just have no free time for doing 100% of this task. So hopes you don't mind to look at part of my solution.
